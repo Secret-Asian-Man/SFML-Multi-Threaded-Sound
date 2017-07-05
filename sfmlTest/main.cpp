@@ -5,7 +5,7 @@
 using namespace std;
 using namespace sf;
 
-#define RESOURCE_DIRECTORY "/home/david/Desktop/Programming/C++/sfmlTest/sfmlTest/resources/sounds/"
+#define RESOURCE_DIRECTORY "/home/david/Desktop/Programming/C++/sfmlTest/sfmlTest/resources/sounds/piano/"
 
 class mySoundClass
 {
@@ -54,6 +54,7 @@ public:
         thread->launch();
 
         thread->wait();
+        //sf::sleep(buffers[soundID]->getDuration());
 
         return;
     }
@@ -86,24 +87,32 @@ int main(int argc, char *argv[])
 {
     mySoundClass soundClass;
 
-    soundClass.addSound("howHaveYouBeen.wav");
-    soundClass.addSound("welcomeBackTestingIsAvalible.wav");
-    soundClass.addSound("areYouTestingMe.wav");
+    soundClass.addSound("AutoMode.wav");
+    soundClass.addSound("GoHome.wav");
+    soundClass.addSound("Initialized.wav");
+    soundClass.addSound("ReadyClaw.wav");
+    soundClass.addSound("Rotate.wav");
+    soundClass.addSound("SkidSteer.wav");
+    soundClass.addSound("Transform.wav");
+
+//    soundClass.addSound("PickUp.wav");
+//    soundClass.addSound("GetBlock.wav");
+//    soundClass.addSound("GotBlock.wav");
+//    soundClass.addSound("GiveUp.wav");
+//    soundClass.addSound("DropOff.wav");
 
     soundClass.playSound(0);
     soundClass.playSound(1);
     soundClass.playSound(2);
+    soundClass.playSound(3);
+    soundClass.playSound(4);
+    soundClass.playSound(5);
 
 
-    while(true)
+    for(unsigned int i = 0; i<UINT32_MAX; ++i)
     {
-        cout<<"MAIN_THREAD!!!!!!!!"<<endl;
+        cout<<i<<endl;
     }
-
-
-
-
-
 
     return 0;
 }
